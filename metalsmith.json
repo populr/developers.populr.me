@@ -5,6 +5,7 @@
     "description": "API and Theming Documentation for Populr.me"
   },
   "plugins": {
+    "metalsmith-clean": {},
     "metalsmith-drafts": {},
     "metalsmith-encode-html": {},
     "../../../lib/populr-metalsmith-layout": {},

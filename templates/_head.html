@@ -12,13 +12,13 @@
 
     <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/bootstrap/css/prettify.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/css/prettify.css?body=1" rel="stylesheet" type="text/css" media="all">
 
-    <script src="/assets/bootstrap/js/jquery-1.7.2.min.js"></script>
+    <script src="/assets/js/jquery-1.7.2.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/bootstrap/js/prettify.js"></script>
+    <script src="/assets/js/prettify.js"></script>
     <script src="/assets/js/jquery.masonry.min.js"></script>
-    <script src="/assets/bootstrap/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
   </head>
 
@@ -30,7 +30,7 @@
           <a class="brand" href="/">Populr Developers</a>
           <ul class="nav">
             <li><a href="/api/index.html">API</a></li>
-            <li><a href="/api/populate.html">Populate</a></li>
+            <li><a href="/populate.html">Populate</a></li>
             <li><a href="/theming/index.html">Theming</a></li>
           </ul>
         </div>
@@ -43,8 +43,10 @@
 
         <header>
           <div class="hero-unit">
-            <img style="float:left; padding-right:20px;" height="135" src="/assets/images/{{icon}}"/>
-            <h1>{{title}}</h1>
+            {{#if icon}}
+            <img style="float:left; padding-right:20px; height: 135px;" height="135" src="/assets/images/{{icon}}"/>
+            {{/if}}
+            <h1>{{#if title}}{{title}}{{else}}Populr Developer Center{{/if}}</h1>
             <p></p>
             <p>{{description}}</p>
           </div>
