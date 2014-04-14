@@ -1,0 +1,11 @@
+{
+  "name": "populr-metalsmith-layout",
+  "private": true,
+  "description": "Partials for handlebars",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "dependencies": {
+    "handlebars": "^2.0.0"
+  }
+}

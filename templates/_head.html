@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Theming</title>
+    <meta name="description" content="Creating your own Populr theme is piece of cake once you get to know the system. This guide will help you learn the fundamentals of theming.">
+    <meta name="author" content="Populr.me">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/bootstrap/css/prettify.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <script src="/assets/bootstrap/js/jquery-1.7.2.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/prettify.js"></script>
+    <script src="/assets/js/jquery.masonry.min.js"></script>
+    <script src="/assets/bootstrap/js/main.js"></script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" data-twttr-rendered="true">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">Populr Developers</a>
+          <ul class="nav">
+            <li><a href="/api/index.html">API</a></li>
+            <li><a href="/api/populate.html">Populate</a></li>
+            <li><a href="/theming/index.html">Theming</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+
+        <header>
+          <div class="hero-unit">
+            <img style="float:left; padding-right:20px;" height="135" src="/assets/images/{{icon}}"/>
+            <h1>{{title}}</h1>
+            <p></p>
+            <p>{{description}}</p>
+          </div>
+        </header>
+
+        <div class="row">
+          <div class="span12">
