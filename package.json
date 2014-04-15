@@ -11,7 +11,7 @@
     "metalsmith-static": ">=0.0.3",
     "metalsmith-clean": ">=0.0.0",
     "handlebars": "~2.0.0",
-    "chalk": "~0.4.0",
+    "chalk": "0.4.0",
     "async": "~0.2.10",
     "node-static": "~0.7.3"
   },
