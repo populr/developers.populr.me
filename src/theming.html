@@ -134,11 +134,11 @@ draft: false
         use in creating your theme. The Handlebars.js elements of the asset return HTML, so they can be wrapped in <code>div</code> tags to apply styling.
       </p>
       <h3>Example Asset Template <small>(don't worry about the syntax right now)</small></h3>
-      <pre class="prettyprint linenums language-html">
-{{#asset &quot;text&quot; size=&quot;2&quot;}}
+      <pre class="prettyprint linenums language-html">```
+{{#asset "text" size="2"}}
   {{{title}}}
   {{{body}}}
-{{/asset}}</pre>
+{{/asset}}```</pre>
       <p>
         Asset templates are comprised of 3 parts: a title, the content, and a description. (Text assets like the one shown above generally don't include a description, since the content is a block of text.) The content is the only mandatory component of the template; titles and descriptions are optional. These parts can be appear in any order within the asset template.
       </p>
@@ -197,57 +197,57 @@ draft: false
     <div class="span4"> </div>
   </div>
   <h2>index.html</h2>
-  <pre class="prettyprint linenums language-html">
-&lt;!doctype html&gt;
-&lt;html itemscope&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;My New Theme&lt;/title&gt;
-  &lt;meta itemprop=&quot;dummyImageCategory&quot; content=&quot;All&quot;&gt;
-  &lt;meta itemprop=&quot;dummyContentLength&quot; content=&quot;medium&quot;&gt;
-  &lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;/styles/main.less&quot;&gt;
-  &lt;script src=&quot;http://populr.me/assets/developers/themer.js&quot;&gt;&lt;/script&gt; 
-  &lt;script src=&quot;/js/main.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  <span class="nocode pln">&lt;script id=&quot;theme&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span>
+  <pre class="prettyprint linenums language-html">```
+<!doctype html>
+<html itemscope>
+<head>
+  <meta charset="utf-8">
+  <title>My New Theme</title>
+  <meta itemprop="dummyImageCategory" content="All">
+  <meta itemprop="dummyContentLength" content="medium">
+  <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
+  <script src="http://populr.me/assets/developers/themer.js"></script> 
+  <script src="/js/main.js"></script>
+</head>
+<body>```
+  <span class="nocode pln">```<script id="theme" type="text/x-handlebars-template">```</span>```
     {{{title}}}
-    {{#region &quot;columnizer&quot; id=&quot;main-region&quot; max_cols=&quot;3&quot; max_auto_assets=&quot;0&quot; dummy_content=&quot;T-1|I-3|V-3|D-3|E-3&quot;}}
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|I-3|V-3|D-3|E-3"}}
 
-      {{#asset &quot;text&quot; size=&quot;1&quot;}}
+      {{#asset "text" size="1"}}
         {{{title}}}
         {{{body}}}
       {{/asset}}
 
-      {{#asset &quot;imagegroup&quot; size=&quot;1&quot;}}
+      {{#asset "imagegroup" size="1"}}
         {{{title}}}
-        {{{imageslider images width=&quot;400&quot; height=&quot;300&quot;}}}
+        {{{imageslider images width="400" height="300"}}}
         {{{description}}}
       {{/asset}}
  
-      {{#asset &quot;documentgroup&quot; size=&quot;1&quot;}}
+      {{#asset "documentgroup" size="1"}}
         {{{title}}}
         {{{description}}}
-        &lt;ul&gt;
+        <ul>
           {{#documents}}
-            &lt;li&gt;&lt;a href=&quot;{{original_url}}&quot;&gt;{{title}}&lt;/a&gt;&lt;/li&gt;
+            <li><a href="{{original_url}}">{{title}}</a></li>
           {{/documents}}
-        &lt;/ul&gt;
+        </ul>
       {{/asset}}
  
-      {{#asset &quot;embedgroup&quot; size=&quot;1&quot; width=&quot;400&quot;}}
+      {{#asset "embedgroup" size="1" width="400"}}
         {{{title}}}
         {{#embeds}}
-          &lt;div class=&quot;embed&quot;&gt;{{{html}}}&lt;/div&gt;
+          <div class="embed">{{{html}}}</div>
         {{/embeds}}
         {{{description}}}
       {{/asset}}
 
-    {{/region}}
-  <span class="nocode pln">&lt;/script&gt;</span>
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+    {{/region}}```
+  <span class="nocode pln">```</script>```</span>```
+</body>
+</html>
+```</pre>
 </section>
 <section id="anatomy-of-a-theme">
   <div class="page-header">
@@ -343,8 +343,8 @@ draft: false
         <code>section</code> elements.
       </p>
     </div>
-<!--     <div class="span1">&nbsp;</div>
- -->    <div class="span8">
+
+    <div class="span8">
       <div class="tabbable tabs-top">
         <ul class="nav nav-pills">
           <li class="active"><a href="#region-code-1-template" data-toggle="tab">Template Code</a></li>
@@ -352,16 +352,16 @@ draft: false
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="region-code-1-template">
-            <pre class="prettyprint linenums language-html">
+            <pre class="prettyprint linenums language-html">```
 {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|I-3,D-2,E-1"}}
   ...
-{{/region}}</pre>
+{{/region}}```</pre>
           </div>
           <div class="tab-pane" id="region-code-1-compiled">
-            <pre class="prettyprint linenums language-html">
-&lt;section class=&quot;region columnizer-region&quot; id=&quot;main-region&quot; 
-         data-region-type=&quot;columnizer&quot; data-region-id=&quot;0&quot;&gt;
-&lt;/section&gt;</pre>
+            <pre class="prettyprint linenums language-html">```
+<section class="region columnizer-region" id="main-region" 
+         data-region-type="columnizer" data-region-id="0">
+</section>```</pre>
           </div>
         </div>
       </div>    
@@ -412,9 +412,9 @@ draft: false
           The Columnizer engine arranges assets first into rows, then into columns. Each row spans the full width of the region. When a user adds an asset to a row, the engine automatically resizes other assets in that row to make room for the new asset. As the themer, you define the maximum number of columns per row, from as few as 1 to as many as you'd like to style.
         </p>
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">
+        <pre class="prettyprint linenums language-html">```
   {{#region "columnizer" id="main-region" max_auto_assets="0" max_cols="3"}}
-  {{/region}}</pre>
+  {{/region}}```</pre>
         <h3>Engine-Specific Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -482,9 +482,9 @@ draft: false
           as close to the top of the page as possible.
         </p>
         <h3>Helper</h3>
-          <pre class="prettyprint linenums language-html">
+          <pre class="prettyprint linenums language-html">```
 {{#region "packer" id="main-region" max_auto_assets="0" columns="3" column_width="120" gutter_width="10" sizes="s,m,l" default_size="s"}}
-{{/region}}</pre>
+{{/region}}```</pre>
         <h3>Engine-Specific Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -604,24 +604,24 @@ draft: false
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="asset-code-1-template">
-            <pre class="prettyprint linenums language-html">
+            <pre class="prettyprint linenums language-html">```
 {{#asset "text" size="2"}}
   {{{title}}}
-  &lt;div class=&quot;content&quot;&gt;
+  <div class="content">
     {{{body}}}
-  &lt;/div&gt;
-{{/asset}}</pre>
+  </div>
+{{/asset}}```</pre>
           </div>
           <div class="tab-pane" id="asset-code-1-compiled">
-            <pre class="prettyprint linenums language-html">
-&lt;div class=&quot;asset asset-type-text asset-size-2&quot; data-region-id=&quot;0&quot;&gt;
-  &lt;div class=&quot;asset-inner&quot;&gt;
-    &lt;h2 class=&quot;title&quot;&gt;Aenean Commodo Ligula&lt;/h2&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;div class=&quot;body&quot;&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
+            <pre class="prettyprint linenums language-html">```
+<div class="asset asset-type-text asset-size-2" data-region-id="0">
+  <div class="asset-inner">
+    <h2 class="title">Aenean Commodo Ligula</h2>
+    <div class="content">
+      <div class="body">Lorem ipsum dolor sit amet.</div>
+    </div>
+  </div>
+</div>```</pre>
           </div>
         </div>
       </div>
@@ -678,8 +678,8 @@ draft: false
               <td><code>{{{title}}}</code></td>
               <td>Title of the asset</td>
               <td>
-                <code class="prettyprint language-html">
-                  &lt;h2 class=&quot;title&quot;&gt;Lorem Ipsum&lt;/h2&gt;
+                <code class="prettyprint language-html">```
+                  <h2 class="title">Lorem Ipsum</h2>```
                 </code>
               </td>
             </tr>
@@ -687,8 +687,8 @@ draft: false
               <td><code>{{{body}}}</code></td>
               <td>Body content of the asset</td>
               <td>
-                <code class="prettyprint language-html">
-                  &lt;div class=&quot;body content&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;&lt;/div&gt;
+                <code class="prettyprint language-html">```
+                  <div class="body content"><p>Lorem ipsum dolor sit amet.</p></div>```
                 </code>
               </td>
             </tr>
@@ -714,28 +714,28 @@ draft: false
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="asset-code-2-template">
-              <pre class="prettyprint linenums language-html">
+              <pre class="prettyprint linenums language-html">```
 {{#asset "imagegroup" size="m"}}
   {{{title}}}
-  &lt;ul class=&quot;images&quot;&gt;
+  <ul class="images">
     {{#images}}
-      &lt;li&gt;&lt;img src=&quot;{{{resize original_url width=640 height=480}}}&quot; title=&quot;{{{title}}}&quot;/&gt;&lt;/li&gt;
+      <li><img src="{{{resize original_url width=640 height=480}}}" title="{{{title}}}"/></li>
     {{/images}}
-  &lt;/ul&gt;
+  </ul>
   {{{description}}}
-{{/asset}}</pre>
+{{/asset}}```</pre>
             </div>
             <div class="tab-pane" id="asset-code-2-compiled">
-              <pre class="prettyprint linenums language-html">
-&lt;div class=&quot;asset asset-type-imagegroup asset-size-m&quot; data-region-id=&quot;0&quot;&gt;
-  &lt;div class=&quot;asset-inner&quot;&gt;
-    &lt;h2 class=&quot;title&quot;&gt;Aenean Commodo Ligula&lt;/h2&gt;
-    &lt;ul class=&quot;images&quot;&gt;
-      &lt;li&gt;&lt;img src=&quot;https://i.populr.me/640/480/http://lorempixel.com/1280/1024%3F0&quot; title=&quot;Lorem Ipsum&quot;/&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div class=&quot;description&quot;&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
+              <pre class="prettyprint linenums language-html">```
+<div class="asset asset-type-imagegroup asset-size-m" data-region-id="0">
+  <div class="asset-inner">
+    <h2 class="title">Aenean Commodo Ligula</h2>
+    <ul class="images">
+      <li><img src="https://i.populr.me/640/480/http://lorempixel.com/1280/1024%3F0" title="Lorem Ipsum"/></li>
+    </ul>
+    <div class="description">Lorem ipsum dolor sit amet.</div>
+  </div>
+</div>```</pre>
             </div>
           </div>
         </div>
@@ -763,7 +763,7 @@ draft: false
               <td>Title of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;h2 class=&quot;title&quot;&gt;Lorem Ipsum&lt;/h2&gt;
+                  ```<h2 class="title">Lorem Ipsum</h2>```
                 </code>
               </td>
             </tr>
@@ -772,7 +772,7 @@ draft: false
               <td>Description content of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;div class=&quot;description&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;&lt;/div&gt;
+                  ```<div class="description"><p>Lorem ipsum dolor sit amet.</p></div>```
                 </code>
               </td>
             </tr>
@@ -859,36 +859,36 @@ draft: false
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="asset-code-4-template">
-              <pre class="prettyprint linenums language-html">
+              <pre class="prettyprint linenums language-html">```
 {{#asset "documentgroup" size="m"}}
   {{{title}}}
   {{{description}}}
-  &lt;ul class=&quot;documents&quot;&gt;
+  <ul class="documents">
     {{#documents}}
-      &lt;li class=&quot;file-extension file-extension-{{{extension}}}&quot;&gt;
+      <li class="file-extension file-extension-{{{extension}}}">
         {{#if title}}
-          &lt;a href=&quot;{{{original_url}}}&quot;&gt;{{{title}}}&lt;/a&gt;
+          <a href="{{{original_url}}}">{{{title}}}</a>
         {{else}}
-          &lt;a href=&quot;{{{original_url}}}&quot;&gt;{{{source_file_name}}}&lt;/a&gt;
+          <a href="{{{original_url}}}">{{{source_file_name}}}</a>
         {{/if}}
-      &lt;/li&gt;
+      </li>
     {{/documents}}
-  &lt;/ul&gt;
-{{/asset}}</pre>
+  </ul>
+{{/asset}}```</pre>
             </div>
             <div class="tab-pane" id="asset-code-4-compiled">
-              <pre class="prettyprint linenums language-html">
-&lt;div class=&quot;asset asset-type-documentgroup asset-size-m&quot; data-region-id=&quot;0&quot;&gt;
-  &lt;div class=&quot;asset-inner&quot;&gt;
-    &lt;h2 class=&quot;title&quot;&gt;Aenean Commodo Ligula&lt;/h2&gt;
-    &lt;div class=&quot;description&quot;&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
-    &lt;ul class=&quot;documents&quot;&gt;
-      &lt;li class=&quot;file-extension file-extension-zip&quot;&gt;
-        &lt;a href=&quot;files.populr.me/assets/theme_sample.zip&quot;&gt;theme_sample.zip&lt;/a&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
+              <pre class="prettyprint linenums language-html">```
+<div class="asset asset-type-documentgroup asset-size-m" data-region-id="0">
+  <div class="asset-inner">
+    <h2 class="title">Aenean Commodo Ligula</h2>
+    <div class="description">Lorem ipsum dolor sit amet.</div>
+    <ul class="documents">
+      <li class="file-extension file-extension-zip">
+        <a href="files.populr.me/assets/theme_sample.zip">theme_sample.zip</a>
+      </li>
+    </ul>
+  </div>
+</div>```</pre>
             </div>
           </div>
         </div>
@@ -912,7 +912,7 @@ draft: false
               <td>Title of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;h2 class=&quot;title&quot;&gt;Lorem Ipsum&lt;/h2&gt;
+                  ```<h2 class="title">Lorem Ipsum</h2>```
                 </code>
               </td>
             </tr>
@@ -921,7 +921,7 @@ draft: false
               <td>Description content of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;div class=&quot;description&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;&lt;/div&gt;
+                  ```<div class="description"><p>Lorem ipsum dolor sit amet.</p></div>```
                 </code>
               </td>
             </tr>
@@ -1004,33 +1004,33 @@ draft: false
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="asset-code-5-template">
-              <pre class="prettyprint linenums language-html">
+              <pre class="prettyprint linenums language-html">```
 {{#asset "embedgroup" size="m" width="640"}}
   {{{title}}}
-  &lt;div class=&quot;embeds&quot;&gt;
+  <div class="embeds">
     {{#embeds}}
-      &lt;div class=&quot;embed embed-type-{{{css_safe_provider}}}&quot;&gt;
+      <div class="embed embed-type-{{{css_safe_provider}}}">
         {{{html}}}
-      &lt;/div&gt;
+      </div>
     {{/embeds}}
-  &lt;/div&gt;
+  </div>
   {{{description}}}
-{{/asset}}</pre>
+{{/asset}}```</pre>
             </div>
             <div class="tab-pane" id="asset-code-5-compiled">
-              <pre class="prettyprint linenums language-html">
-&lt;div class=&quot;asset asset-type-embedgroup asset-size-m&quot; data-region-id=&quot;0&quot;&gt;
-  &lt;div class=&quot;asset-inner&quot;&gt;
-    &lt;h2 class=&quot;title&quot;&gt;Aenean Commodo Ligula&lt;/h2&gt;
-    &lt;div class=&quot;embed embed-type-{{{css_safe_provider}}}&quot;&gt;
-      &lt;div class=&quot;embedded-object&quot;&gt;
-        &lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;http://www.youtube.com/embed/q-_4mcYsQdE?wmode=transparent&amp;fs=1&amp;feature=oembed&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-        &lt;img src=&quot;http://i3.ytimg.com/vi/q-_4mcYsQdE/hqdefault.jpg&quot; alt=&quot;&quot; style=&quot;width:640px;height:480px;display:none;&quot;/&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;description&quot;&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
+              <pre class="prettyprint linenums language-html">```
+<div class="asset asset-type-embedgroup asset-size-m" data-region-id="0">
+  <div class="asset-inner">
+    <h2 class="title">Aenean Commodo Ligula</h2>
+    <div class="embed embed-type-{{{css_safe_provider}}}">
+      <div class="embedded-object">
+        <iframe width="640" height="480" src="http://www.youtube.com/embed/q-_4mcYsQdE?wmode=transparent&fs=1&feature=oembed" frameborder="0" allowfullscreen></iframe>
+        <img src="http://i3.ytimg.com/vi/q-_4mcYsQdE/hqdefault.jpg" alt="" style="width:640px;height:480px;display:none;"/>
+      </div>
+    </div>
+    <div class="description">Lorem ipsum dolor sit amet.</div>
+  </div>
+</div>```</pre>
             </div>
           </div>
         </div>
@@ -1057,7 +1057,7 @@ draft: false
               <td>Title of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;h2 class=&quot;title&quot;&gt;Lorem Ipsum&lt;/h2&gt;
+                  ```<h2 class="title">Lorem Ipsum</h2>```
                 </code>
               </td>
             </tr>
@@ -1066,7 +1066,7 @@ draft: false
               <td>Description content of the asset</td>
               <td>
                 <code class="prettyprint language-html">
-                  &lt;div class=&quot;description&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;&lt;/div&gt;
+                  ```<div class="description"><p>Lorem ipsum dolor sit amet.</p></div>```
                 </code>
               </td>
             </tr>
@@ -1164,7 +1164,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{{resize original_url width=640 height=480}}}</pre>
+        <pre class="prettyprint linenums language-html">```{{{resize original_url width=640 height=480}}}```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1210,13 +1210,13 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">
-&lt;!-- within an imagegroup template --&gt;
+        <pre class="prettyprint linenums language-html">```
+<!-- within an imagegroup template -->
 {{#if_many images}}
-  &lt;!-- loop through images --&gt;
+  <!-- loop through images -->
 {{else}}
-  &lt;!-- display single image --&gt;
-{{/if_many}}</pre>
+  <!-- display single image -->
+{{/if_many}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
       </div>
@@ -1236,15 +1236,15 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">
-&lt;!-- within an embedgroup template --&gt;
+        <pre class="prettyprint linenums language-html">```
+<!-- within an embedgroup template -->
 {{#embeds}}
-  {{#if_equal kind &quot;video&quot;}}
-    &lt;div class=&quot;embedded-video&quot;&gt;{{{html}}}&lt;/div&gt;
+  {{#if_equal kind "video"}}
+    <div class="embedded-video">{{{html}}}</div>
   {{else}}
-    &lt;div class=&quot;embed&quot;&gt;{{{html}}}&lt;/div&gt;
+    <div class="embed">{{{html}}}</div>
   {{/if_equal}}
-{{/embeds}}</pre>
+{{/embeds}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
       </div>
@@ -1264,16 +1264,16 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">
-{{#asset &quot;imagegroup&quot; size=&quot;1&quot;}}
-  {{{imageslider images width=&quot;220&quot; height=&quot;147&quot;}}}
+        <pre class="prettyprint linenums language-html">```
+{{#asset "imagegroup" size="1"}}
+  {{{imageslider images width="220" height="147"}}}
   {{#if_or title_visible description_visible}}
-    &lt;div class=&quot;text&quot;&gt;
+    <div class="text">
       {{{title}}}
       {{{description}}}
-    &lt;/div&gt;
+    </div>
   {{/if_or}}
-{{/asset}}</pre>
+{{/asset}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
       </div>
@@ -1293,14 +1293,14 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">
-{{#asset &quot;text&quot; size=&quot;1&quot;}}
+        <pre class="prettyprint linenums language-html">```
+{{#asset "text" size="1"}}
   {{{title}}}
   {{#if_and title_visible body_visible}}
-    &lt;div class=&quot;h-rule&quot; /&gt;
+    <div class="h-rule" />
   {{/if_and}}
   {{{body}}}
-{{/asset}}</pre>
+{{/asset}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
       </div>
@@ -1320,7 +1320,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{{format_file_size source_file_size precision=2}}}</pre>
+        <pre class="prettyprint linenums language-html">```{{{format_file_size source_file_size precision=2}}}```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1355,11 +1355,11 @@ draft: false
           If your theme uses the image slider helper, you must include the following line of code in your main.less file.
         </p>
         <h3>main.less</h3>
-        <pre class="prettyprint linenums language-css">#populr &gt; #image-slider-themes &gt; .basic();</pre>
+        <pre class="prettyprint linenums language-css">```#populr > #image-slider-themes > .basic();```</pre>
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{{imageslider images width=640 height=480}}}</pre>
+        <pre class="prettyprint linenums language-html">```{{{imageslider images width=640 height=480}}}```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1416,7 +1416,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{sharing}}</pre>
+        <pre class="prettyprint linenums language-html">```{{sharing}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
         <h3>Default appearance</h3>
@@ -1438,7 +1438,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{pop_links}}</pre>
+        <pre class="prettyprint linenums language-html">```{{pop_links}}```</pre>
         <h3>Settings</h3>
         <p>There are no settings for this helper.</p>
         <h3>Default appearance</h3>
@@ -1461,7 +1461,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{logo max_width=250}}</pre>
+        <pre class="prettyprint linenums language-html">```{{logo max_width=250}}```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1498,7 +1498,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{{strip_html [template]}}}</pre>
+        <pre class="prettyprint linenums language-html">```{{{strip_html [template]}}}```</pre>
         <h3>Settings</h3>
         <p>
           There are no settings for this helper.
@@ -1517,9 +1517,9 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helpers</h3>
-        <pre class="prettyprint linenums language-html">{{{title_raw}}}
+        <pre class="prettyprint linenums language-html">```{{{title_raw}}}
 {{{body_raw}}}
-{{{description_raw}}}</pre>
+{{{description_raw}}}```</pre>
         <h3>Settings</h3>
         <p>
           There are no settings for this helper.
@@ -1538,7 +1538,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Helper</h3>
-        <pre class="prettyprint linenums language-html">{{{cssify [template]}}}</pre>
+        <pre class="prettyprint linenums language-html">```{{{cssify [template]}}}```</pre>
         <h3>Settings</h3>
         <p>
           There are no settings for this helper.
@@ -1552,12 +1552,12 @@ draft: false
     <div class="row-fluid">
       <div class="span6">
         <p>
-          The <code>{{{base_path}}}</code> helper is used for specifying a relative file path within your theme's Handlebars template. If you have to specify a relative file path inside the <code>&lt;script id=&quot;theme&quot; type=&quot;text/x-handlebars-template&quot;&gt;</code> tag of your index.html file, you must use this helper.
+          The <code>{{{base_path}}}</code> helper is used for specifying a relative file path within your theme's Handlebars template. If you have to specify a relative file path inside the <code>```<script id="theme" type="text/x-handlebars-template">```</code> tag of your index.html file, you must use this helper.
         </p>
       </div>
       <div class="span6">
         <h3>Example</h3>
-        <pre class="prettyprint linenums language-html">&lt;img src='{{{base_path}}}/images/bg_image.png' /&gt;</pre>
+        <pre class="prettyprint linenums language-html">```<img src='{{{base_path}}}/images/bg_image.png' />```</pre>
         <h3>Settings</h3>
         <p>
           There are no settings for this helper.
@@ -1576,7 +1576,7 @@ draft: false
       </div>
       <div class="span6">
         <h3>Example</h3>
-        <pre class="prettyprint linenums language-html">{{log}}</pre>
+        <pre class="prettyprint linenums language-html">```{{log}}```</pre>
         <h3>Settings</h3>
         <p>
           There are no settings for this helper.
@@ -1593,16 +1593,16 @@ draft: false
           Through a combination of helpers, you can add a navigation menu to your theme. Take a look at the example below, which builds a navigation menu from the asset titles of all size 1 text assets.
         </p>
         <h3>Example</h3>
-        <pre class="prettyprint linenums language-html">
-&lt;ul id=&quot;navigation&quot;&gt;
+        <pre class="prettyprint linenums language-html">```
+<ul id="navigation">
   {{#each pop.contents}}
-    {{#if_equal layout.size &quot;1&quot;}}
-      {{#if_equal type &quot;Text&quot;}}
-        &lt;li&gt;&lt;a href=&quot;#{{{cssify title_raw}}}&quot;&gt;{{{strip_html title_raw}}}&lt;/a&gt;&lt;/li&gt;
+    {{#if_equal layout.size "1"}}
+      {{#if_equal type "Text"}}
+        <li><a href="#{{{cssify title_raw}}}">{{{strip_html title_raw}}}</a></li>
       {{/if_equal}}
     {{/if_equal}}
   {{/each}}
-&lt;/ul&gt;</pre>
+</ul>```</pre>
       </div>
       <div class="span3">
       </div>
@@ -1618,16 +1618,16 @@ draft: false
         </p>
         <div class="alert alert-info">
           <p>
-            <span class="label label-info">Heads up!</span> For this tag to work properly, your html tag must include the itemscope element, like so: <code>&lt;html itemscope&gt;</code>
+            <span class="label label-info">Heads up!</span> For this tag to work properly, your html tag must include the itemscope element, like so: <code>```<html itemscope>```</code>
           </p>
         </div>
       </div>
       <div class="span6">
         <h3>Example</h3>
-        <pre class="prettyprint linenums language-html">
-&lt;head&gt;
-  &lt;meta itemprop=&quot;defaultBackground&quot; content=&quot;/images/background.jpg&quot; data-width=&quot;1800&quot; data-height=&quot;1800&quot; data-position=&quot;c&quot; data-style=&quot;fill&quot; data-color=&quot;#665b42&quot;&gt;
-  ...</pre>
+        <pre class="prettyprint linenums language-html">```
+<head>
+  <meta itemprop="defaultBackground" content="/images/background.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#665b42">
+  ...```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1696,20 +1696,20 @@ draft: false
     <div class="row-fluid">
       <div class="span6">
         <p>
-          The user-specified background image is applied to the pop's <code>&lt;body&gt;</code> tag by default. However, you can override this default and set that image as the background for a different element on the page. In the example to the right, taken from the theme named Cumberland, the background image is applied to the first columnizer row in the pop.
+          The user-specified background image is applied to the pop's <code>```<body>```</code> tag by default. However, you can override this default and set that image as the background for a different element on the page. In the example to the right, taken from the theme named Cumberland, the background image is applied to the first columnizer row in the pop.
         </p>
         <div class="alert alert-info">
           <p>
-            <span class="label label-info">Heads up!</span> For this tag to work properly, your html tag must include the itemscope element, like so: <code>&lt;html itemscope&gt;</code>
+            <span class="label label-info">Heads up!</span> For this tag to work properly, your html tag must include the itemscope element, like so: <code>```<html itemscope>```</code>
           </p>
         </div>
       </div>
       <div class="span6">
         <h3>Example</h3>
-        <pre class="prettyprint linenums language-html">
-&lt;head&gt;
-  &lt;meta itemprop=&quot;backgroundContainer&quot; content=&quot;.columnizer-row:first-child&quot;&gt;
-  ...</pre>
+        <pre class="prettyprint linenums language-html">```
+<head>
+  <meta itemprop="backgroundContainer" content=".columnizer-row:first-child">
+  ...```</pre>
         <h3>Settings</h3>
         <table class="table table-bordered table-striped">
           <thead>
@@ -1848,7 +1848,7 @@ draft: false
         <p>
           Populr_mixins.less contains several important mixins for your theme. Make sure to add the following line to the top of your main.less file:
         </p>
-        <pre class="prettyprint linenums language-css">@import 'http://populr.me/assets/developers/populr_mixins.less';</pre>
+        <pre class="prettyprint linenums language-css">```@import 'http://populr.me/assets/developers/populr_mixins.less';```</pre>
       </div>
     </div>
   </section>
@@ -1868,27 +1868,27 @@ draft: false
       <p>
         Let's look at an example wherein an asset's title text is set against the pop background image. The following CSS will automatically apply legible text colors.
       </p>
-      <pre class="prettyprint linenums language-css">
+      <pre class="prettyprint linenums language-css">```
 .asset-title {
   #populr > .text-color-over-color(@background-color);
-}</pre>
+}```</pre>
       <p>
         @background-color is a LESS variable automatically calculated as the average color of the user-specified background image. So this code will compile into one of the following results based on the brightness of @background-color.
       </p>
     <div class="row-fluid">
       <div class="span6">
         <h4>@background-color is dark</h4>
-      <pre class="prettyprint linenums language-css">
+      <pre class="prettyprint linenums language-css">```
 .asset-title {
   color: #fff;
-}</pre>
+}```</pre>
       </div>
       <div class="span6">
         <h4>@background-color is bright</h4>
-      <pre class="prettyprint linenums language-css">
+      <pre class="prettyprint linenums language-css">```
 .asset-title {
   color: #333;
-}</pre>
+}```</pre>
       </div>
     </div>
 
@@ -1962,13 +1962,13 @@ draft: false
           These theme style files are referenced from the theme's index.html file with the following syntax (using the theme Norway as an example):
         </p>
         <h3>index.html in the theme called Norway</h3>
-        <pre class="prettyprint linenums language-html">&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-default&quot; title=&quot;Malibu&quot; data-preview=&quot;#66b5f2&quot;&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-sulu&quot; title=&quot;Sulu&quot; data-preview=&quot;#bcf266&quot;&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-tango&quot; title=&quot;Tango&quot; data-preview=&quot;#f36d24&quot;&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-custom&quot; title=&quot;Custom&quot; data-preview=&quot;custom&quot;&gt;</pre>
+        <pre class="prettyprint linenums language-html">```<meta itemprop="palette" content="palette-default" title="Malibu" data-preview="#66b5f2">
+<meta itemprop="palette" content="palette-sulu" title="Sulu" data-preview="#bcf266">
+<meta itemprop="palette" content="palette-tango" title="Tango" data-preview="#f36d24">
+<meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">```</pre>
         <div class="alert alert-info">
           <p>
-            <span class="label label-info">Heads up!</span> For these tags to work properly, your html tag must include the itemscope element, like so: <code>&lt;html itemscope&gt;</code>
+            <span class="label label-info">Heads up!</span> For these tags to work properly, your html tag must include the itemscope element, like so: <code>```<html itemscope>```</code>
           </p>
         </div>
         <p>
@@ -2020,9 +2020,9 @@ draft: false
                   <br>
                   Here are the meta tag definitions that result in these thumbnails.
                 </p>
-                <pre class="prettyprint linenums language-html">&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-default&quot; title=&quot;Light&quot; data-preview=&quot;#cccccc&quot;&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-dark&quot; title=&quot;Dark&quot; data-preview=&quot;#111111&quot;&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-transparent&quot; title=&quot;Transparent&quot; data-preview=&quot;#888,#fff,#888,#fff,#888,#fff,#888,#fff,#888,#fff&quot;&gt;</pre>
+                <pre class="prettyprint linenums language-html">```<meta itemprop="palette" content="palette-default" title="Light" data-preview="#cccccc">
+<meta itemprop="palette" content="palette-dark" title="Dark" data-preview="#111111">
+<meta itemprop="palette" content="palette-transparent" title="Transparent" data-preview="#888,#fff,#888,#fff,#888,#fff,#888,#fff,#888,#fff">```</pre>
               </td>
             </tr>
           </tbody>
@@ -2030,18 +2030,18 @@ draft: false
         <p>
           The theme properties that vary across styles are defined in main.less with variables. Norway's main.less file specifies the background of the header area like this:
         </p>
-        <pre class="prettyprint linenums language-less">// main.less in Norway
-background: @header-color url("@{base-url}/images/header-overlay.png") repeat bottom center;</pre>
+        <pre class="prettyprint linenums language-less">```// main.less in Norway
+background: @header-color url("@{base-url}/images/header-overlay.png") repeat bottom center;```</pre>
         <p>
           Note the use of <code>@header-color</code> to specify the background color. To set that color, each theme style assigns a unique value to <code>@header-color</code>. The theme's palette-default.less file contains this line of CSS:
         </p>
-        <pre class="prettyprint linenums language-less">// palette-default.less in Norway
-@header-color: #66b5f2;</pre>
+        <pre class="prettyprint linenums language-less">```// palette-default.less in Norway
+@header-color: #66b5f2;```</pre>
         <p>
           By default, this theme will use the hex color #66b5f2 for the header's background color. A different style file for this theme (palette-sulu.less) contains this line:
         </p>
-        <pre class="prettyprint linenums language-less">// palette-sulu.less in Norway
-@header-color: #bcf266;</pre>
+        <pre class="prettyprint linenums language-less">```// palette-sulu.less in Norway
+@header-color: #bcf266;```</pre>
         <p>
           ...so an end user who selects the style "Sulu" is basically redefining the value of the <code>@header-color</code> LESS variable through Populr's UI.
         </p>
@@ -2056,13 +2056,13 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         <p>
           The custom color theme style file must be named palette-custom.less. Also, the style definition tag in the theme's index.html file must be set up as follows:
         </p>
-        <pre class="prettyprint linenums language-html">&lt;!-- index.html in Norway --&gt;
-&lt;meta itemprop=&quot;palette&quot; content=&quot;palette-custom&quot; title=&quot;Custom&quot; data-preview=&quot;custom&quot;&gt;</pre>
+        <pre class="prettyprint linenums language-html">```<!-- index.html in Norway -->
+<meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">```</pre>
         <p>
           This will give the end users a color picker in the Style dropdown menu of the pop editor. The color selected by the user will be assigned to the less variable <code>@custom-color</code>. To continue to our example with the theme Norway, the custom style file contains this line of CSS:
         </p>
-        <pre class="prettyprint linenums language-less">// palette-custom.less in Norway
-@header-color: @custom-color;</pre>
+        <pre class="prettyprint linenums language-less">```// palette-custom.less in Norway
+@header-color: @custom-color;```</pre>
       </div>
       <div class="span6">
         <img src="../assets/images/theming/color-picker.png" alt="Color Picker" />
@@ -2074,7 +2074,7 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         <p>
           Populr's local theming environment will allow you to test your theme styles one at a time by adding import statements to the top of your main.less file. For example, if one of your theme styles was stored in a file named red_accent.less, you could test that theme style in the local theming environment by adding this line to the top of your main.less file:
         </p>
-        <pre class="prettyprint linenums language-css">@import 'red_accent';</pre>
+        <pre class="prettyprint linenums language-css">```@import 'red_accent';```</pre>
         <p>
           To test a different style for this theme, you'd replace <code>red_accent</code> with the file name for the desired style.
         </p>
@@ -2090,22 +2090,22 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
           Populr's theming engine automatically adds system-generated classes to certain page elements. Here are a few that will be especially valuable for building unique behaviors into your theme, such as applying styling variations based on content location, size, etc.
         </p>
     <p>&nbsp;</p>
-    <h3>Classes added to the &lt;html&gt; tag</h3>
+    <h3>Classes added to the ```<html>``` tag</h3>
         <p>
-          Populr uses <a href="http://modernizr.com/" target="_blank">Modernizr</a> to add several classes automatically to the &lt;html&gt; tag. <a href="http://modernizr.com/" target="_blank">Head over to their site</a> for the details.
+          Populr uses <a href="http://modernizr.com/" target="_blank">Modernizr</a> to add several classes automatically to the ```<html>``` tag. <a href="http://modernizr.com/" target="_blank">Head over to their site</a> for the details.
         </p>
         <p>
-          &lt;html&gt; will also get IE classes in the style originally <a href="http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">proposed by Paul Irish</a> and improved by a few others.
+          ```<html>``` will also get IE classes in the style originally <a href="http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/" target="_blank">proposed by Paul Irish</a> and improved by a few others.
         </p>
     <p>&nbsp;</p>
-    <h3>Classes added to the &lt;body&gt; tag</h3>
+    <h3>Classes added to the ```<body>``` tag</h3>
         <p>
-          Pops will have a number of classes added to the &lt;body&gt; tag as well.
+          Pops will have a number of classes added to the ```<body>``` tag as well.
         </p>
         <ul>
-          <li>The theme style name will be added to &lt;body&gt; as a class. (See the <a href="#theme-styles">theme styles</a> section for more info.)</li>
-          <li>&lt;body&gt; will get several classes that act as flags based on whether or not the user has enabled certain features for their pop. These classes are: <code>has-title</code>, <code>has-logo</code>, <code>has-sharing</code>, and <code>has-links</code>.</li>
-          <li>If JavaScript is enabled in the pop viewer's browser, &lt;body&gt; gets the class <code>js</code>. If JavaScript is disabled, &lt;body&gt; gets <code>no-js</code>.</li>
+          <li>The theme style name will be added to ```<body>``` as a class. (See the <a href="#theme-styles">theme styles</a> section for more info.)</li>
+          <li>```<body>``` will get several classes that act as flags based on whether or not the user has enabled certain features for their pop. These classes are: <code>has-title</code>, <code>has-logo</code>, <code>has-sharing</code>, and <code>has-links</code>.</li>
+          <li>If JavaScript is enabled in the pop viewer's browser, ```<body>``` gets the class <code>js</code>. If JavaScript is disabled, ```<body>``` gets <code>no-js</code>.</li>
         </ul>
     <p>&nbsp;</p>
     <h3>Rows in Columnizer Regions</h3>
@@ -2176,9 +2176,9 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
           Users can choose from 3 sizes for any text in their pop: default, smaller, and larger. When a user applies either the smaller or larger size to a piece of text, that text gets wrapped in a div with a class that modifies the text size.
         </p>
         <ul>
-          <li>Smaller text size: <code>&lt;div class=&quot;font-size-smaller&quot;&gt;</code></li>
+          <li>Smaller text size: <code>```<div class="font-size-smaller">```</code></li>
           <li>Default text size: No class applied</li>
-          <li>Larger text size: <code>&lt;div class=&quot;font-size-larger&quot;&gt;</code></li>
+          <li>Larger text size: <code>```<div class="font-size-larger">```</code></li>
         </ul>
         <p>
           You don't have to style these classes yourself; Populr will simply decrease or increase the font size when these classes are applied. However, you're free to style them if you wish. One suggestion: styling the <code>font-size-smaller</code> class in your asset titles opens up some cool opportunities for fancy subtitles.
@@ -2200,10 +2200,10 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         We built a LESS mixin that handles a lot of the work for you. This mixin stacks each region vertially, then stacks all assets vertically within each region. You just have to add the mixin to your first media query within your main.less file. Take a look at this example:
       </p>
       <h3>main.less</h3>
-      <pre class="prettyprint linenums language-css">@media screen and (max-width: 768px) {
-  #populr &gt; .mobile-reset();
+      <pre class="prettyprint linenums language-css">```@media screen and (max-width: 768px) {
+  #populr > .mobile-reset();
   ...
-}</pre>
+}```</pre>
       <p>
         That'll get your mobilization started. You'll almost certainly have to make additional adjustments in your media query to get things looking good. Be sure to test with a comprehensive set of <a href="#dummy-content">dummy content</a> to make sure you catch any mobile layout bugs!
       </p>
@@ -2214,8 +2214,8 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         Note that the main.less file must contain the following import statement in order for the mobile mixin to work.
       </p>
       <h4>main.less</h4>
-      <pre class="prettyprint linenums language-css">@import 'http://populr.me/assets/developers/populr_mixins.less';
-</pre>
+      <pre class="prettyprint linenums language-css">```@import 'http://populr.me/assets/developers/populr_mixins.less';
+```</pre>
     </div>
   </div>
 </section>
@@ -2242,8 +2242,8 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         <p>
           Dummy content is defined as an attribute of the <code>{{region}}</code> Handlebars.js helper. You might have noticed this earlier while reviewing the <a href="#theme-skeleton">sample theme</a>. Here it is again:
         </p>
-        <pre class="prettyprint linenums language-html">
-{{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-3,T-1|T-2,E-1,D-4"}}</pre>
+        <pre class="prettyprint linenums language-html">```
+{{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-3,T-1|T-2,E-1,D-4"}}```</pre>
         <h3>Columnizer Dummy Content Sizes</h3>
         <p>
           Each comma-separated string of the dummy content represents a single asset. The syntax for each asset is as follows:<br><code>[asset type]-[# of items]</code>
@@ -2307,14 +2307,14 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         <p>
           The index.html file must contain the following <code>meta</code> tags inside the <code>head</code> tag in order for dummy content to render properly.
         </p>
-        <pre class="prettyprint linenums language-html">
-&lt;head&gt;
-  &lt;meta itemprop=&quot;dummyImageCategory&quot; content=&quot;All&quot;&gt;
-  &lt;meta itemprop=&quot;dummyContentLength&quot; content=&quot;medium&quot;&gt;
-  ...</pre>
+        <pre class="prettyprint linenums language-html">```
+<head>
+  <meta itemprop="dummyImageCategory" content="All">
+  <meta itemprop="dummyContentLength" content="medium">
+  ...```</pre>
       <div class="alert alert-info">
         <p>
-          <span class="label label-info">Heads up!</span> For these tags to work properly, your html tag must include the itemscope element, like so: <code>&lt;html itemscope&gt;</code>
+          <span class="label label-info">Heads up!</span> For these tags to work properly, your html tag must include the itemscope element, like so: <code>```<html itemscope>```</code>
         </p>
       </div>
       <h4>dummyImageCategory</h4>
@@ -2340,8 +2340,8 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
           The main.less file must contain the following import statement in order for dummy content to render properly.
         </p>
         <h4>main.less</h4>
-        <pre class="prettyprint linenums language-css">@import 'http://populr.me/assets/developers/populr_mixins.less';
-</pre>
+        <pre class="prettyprint linenums language-css">```@import 'http://populr.me/assets/developers/populr_mixins.less';
+```</pre>
       </div>
     </div>
     <div class="row-fluid">
@@ -2368,8 +2368,8 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         <p>
           To start the local theming environment on your Mac using Python, open Terminal, then use the <code>cd</code> command to change to your theme's directory. Once you're in the right directory, use this command to start your server:
         </p>
-        <pre class="prettyprint linenums language-html">
-python -m SimpleHTTPServer 8080</pre>
+        <pre class="prettyprint linenums language-html">```
+python -m SimpleHTTPServer 8080```</pre>
         <p>
           You can then check out your theme by opening a browser and entering the URL <code>http://localhost:8080</code>. You will see a pop that uses your theme, constructed from the dummy content you specified in your theme's region definition(s).
         </p>
@@ -2489,7 +2489,7 @@ python -m SimpleHTTPServer 8080</pre>
         Congratulations! You made it to the end of the Populr documentation page. What a thorough and industrious developer you must be :).
       </p>
       <p>
-        If you still have questions about this stuff, get in touch with us: send an email to John at <a href="mailto:john@populr.me">john@populr.me</a> and he'll get you sorted right out.
+        If you still have questions about this stuff, get in touch with us: send an email to Morley at <code>morley[at]populr.me</code> and she'll get you sorted right out.
       </p>
       <p>Pop pop!</p>
     </div>

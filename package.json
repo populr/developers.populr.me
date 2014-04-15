@@ -2,18 +2,21 @@
   "name": "developers.populr.me",
   "private": true,
   "dependencies": {
-    "metalsmith": "^0.3.0",
-    "metalsmith-drafts": "^0.0.1",
-    "metalsmith-templates": "^0.1.0",
-    "metalsmith-permalinks": "^0.2.0",
-    "metalsmith-build-date": "^0.1.0",
-    "metalsmith-static": "^0.0.3",
-    "metalsmith-clean": "^0.0.0",
+    "metalsmith": ">=0.6.0",
+    "metalsmith-drafts": ">=0.0.1",
+    "metalsmith-templates": ">=0.4.0",
+    "metalsmith-permalinks": ">=0.3.0",
+    "metalsmith-build-date": ">=0.1.0",
+    "metalsmith-static": ">=0.0.3",
+    "metalsmith-clean": ">=0.0.0",
     "handlebars": "^2.0.0",
     "chalk": "^0.4.0",
-    "async": "^0.2.10"
+    "async": "^0.2.10",
+    "node-static": "^0.7.3"
   },
   "scripts": {
-    "build": "./node_modules/metalsmith/bin/metalsmith"
+    "develop": "node lib/develop.js",
+    "metalsmith": "./node_modules/metalsmith/bin/metalsmith",
+    "deploy": "node lib/deploy.js"
   }
 }
