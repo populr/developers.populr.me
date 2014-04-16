@@ -1,7 +1,8 @@
 /* Override some defaults */
 html,
 body {
-  background: url(/assets/images/background_developers_repeating.gif) top left repeat;
+  /*background: url(/assets/images/background_developers_repeating.gif) top left repeat;*/
+  background: #F6F5F2;
 }
 body {
   padding-top: 40px;
@@ -9,6 +10,16 @@ body {
 .navbar {
   margin-bottom: 0;
 }
+
+.navbar-inner {
+  background: #f17100 !important;
+}
+
+.navbar-inner .brand {
+  color: #fff;
+  text-shadow: none;
+}
+
 .container > footer {
   margin-top: 20px;
 }
@@ -17,11 +28,21 @@ body {
   /* center align it with the container */
 
 }
+
+.footer-logo {
+  height: 50px;
+  width: 150px;
+  margin: 0 auto;
+  background-size: contain !important;
+  background: url('/assets/images/logo_rgb_medium.png') center no-repeat;
+}
+.lt-ie9 .footer-logo { display: none; }
+
 /* The white background content wrapper */
 .content {
   background-color: #fff;
   padding: 20px;
-  margin: 0 -20px;
+  margin: 40px -20px;
   /* negative indent the amount of the padding to maintain the grid system */
 
   -webkit-border-radius: 0 0 6px 6px;

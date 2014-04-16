@@ -1,6 +1,7 @@
 /* Override some defaults */
 html, body {
-  background:url(/assets/images/background_developers_repeating.gif) top left repeat;
+  //  ebackground:url(/assets/images/background_developers_repeating.gif) top left repeat;
+  background: #F6F5F2;
 }
 
 body {
@@ -10,6 +11,27 @@ body {
 .navbar {
   margin-bottom: 0;
 }
+
+.navbar-inner {
+  background: #f17100 !important;
+}
+
+.navbar-inner, .navbar-inner .brand,
+.navbar .nav>li>a,
+.navbar .nav>li>a:focus, .navbar .nav>li>a:hover,
+.navbar .nav>.active>a,
+.navbar .nav>.active>a:hover {
+  color: #fff;
+  text-shadow: none;
+}
+
+.navbar .nav>li>a:focus,
+.navbar .nav>li>a:hover,
+.navbar .nav>.active>a,
+.navbar .nav>.active>a:hover {
+  background: #DB6801;
+}
+
 .container > footer {
   margin-top: 20px;
 }
