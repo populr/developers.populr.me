@@ -9,7 +9,7 @@ draft: false
 <div class="subnav">
   <ul class="nav nav-pills">
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">test Getting Started<b class="caret"></b></a>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Getting Started<b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a href="#getting-started">Theming Overview Video</a></li>
         <li><a href="#simple-example">Simple Example Theme</a></li>
@@ -22,7 +22,7 @@ draft: false
         <li><a href="#regions">Regions Overview</a></li>
         <li class="divider"></li>
         <li><a href="#columnizer-regions">Columnizer Layout Engine</a></li>
-        <li><a href="#packer-regions">Packer Layout Engine</a></li>
+        <!-- <li><a href="#packer-regions">Packer Layout Engine</a></li> -->
       </ul>
     </li>
     <li class="dropdown">
@@ -50,7 +50,7 @@ draft: false
         <li><a href="#ifand-helper">If And Helper</a></li>
         <li><a href="#formatfilesize-helper">Format File Size Helper</a></li>
         <li><a href="#imageslider-helper">Image Slider Helper</a></li>
-        <li><a href="#sharing-helper">Sharing Button Helper</a></li>
+        <!-- <li><a href="#sharing-helper">Sharing Button Helper</a></li> -->
         <li><a href="#links-helper">Pop Links Helper</a></li>
         <li><a href="#logo-helper">Logo Helper</a></li>
         <li><a href="#strip-html-helper">strip_html Helper</a></li>
@@ -260,12 +260,12 @@ draft: false
       <p>
         At its core, a region is simply a container for assets. The magic happens 
         when defining what type of <strong>layout engine</strong> a region uses 
-        to display those assets. We'll talk more about this in a bit. The two 
-        layout engines currently available are:
+        to display those assets. We'll talk more about this in a bit. The only 
+        layout engine currently available is:
       </p>
       <ul>
         <li>Columnizer</li>
-        <li>Packer</li>
+        <!-- <li>Packer</li> -->
       </ul>
       <h3>Assets</h3>
       <p>
@@ -467,7 +467,7 @@ draft: false
       </div>
     </div>
   </section>
-  <section id="packer-regions">
+  <!-- <section id="packer-regions">
     <div class="row-fluid">
       <div class="span6">
         <h2>Packer Layout Engine</h2>
@@ -575,7 +575,7 @@ draft: false
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </section>
 <section id="assets">
   <div class="page-header">
@@ -647,9 +647,9 @@ draft: false
               <p>
                 For a Columnizer region, the available asset sizes are <code>1, 2, 3...</code> and so on.<br><strong>Columnizer example:</strong> <code>size="2"</code>
               </p>
-              <p>
+              <!-- <p>
                 For a Packer region, the available asset sizes are <code>s, m, l</code>. The asset sizes valid for the region are specified in the <code></code> helper.<br><strong>Packer example:</strong> <code>size="m"</code>
-              </p>
+              </p> -->
             </td>
           </tr>
         </tbody>
@@ -743,7 +743,7 @@ draft: false
     </div>
     <div class="alert alert-info">
       <p>
-        <span class="label label-info">Heads up!</span> We strongly recommend you use <a href="#imageslider-helper">Populr's image slider helper</a> in your image assets. Other sliders are unsupported, meaning you can give them a try but if it doesn't work you'll miss out on the super-helpful support of our theming staff. You'll be on your own, cowboy/girl.
+        <span class="label label-info">Heads up!</span> Multiple images can be added to an imagegroup. We strongly recommend you use <a href="#imageslider-helper">Populr's image slider helper</a> in your image assets. Other sliders are unsupported, meaning you can give them a try but if it doesn't work you'll miss out on the super-helpful support of our theming staff. You'll be on your own, cowboy/girl.
       </p>
     </div>
     <div class="row-fluid">
@@ -1403,7 +1403,7 @@ draft: false
     </div>
   </section>
 
-  <section id="sharing-helper">
+  <!-- <section id="sharing-helper">
     <h2>Sharing</h2>
     <div class="row-fluid">
       <div class="span6">
@@ -1423,7 +1423,7 @@ draft: false
         <img src="../assets/images/theming/sharing_buttons.png" alt="Sharing Buttons" />
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="links-helper">
     <h2>Pop links</h2>
@@ -2160,14 +2160,6 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
               <li>...and so on for as many sizes as the region allows</li>
             </ul>
           </div>
-          <div class="span3">
-            <p><strong>Assets in Packer Regions</strong></p>
-            <ul>
-              <li><code>asset-size-s</code></li>
-              <li><code>asset-size-m</code></li>
-              <li><code>asset-size-l</code></li>
-            </ul>
-          </div>
           <div class="span6"> </div>
         </div>
     <p>&nbsp;</p>
@@ -2291,15 +2283,15 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
       </div>
     </div>
     <div class="row-fluid">
-      <div class="span12">
-        <h3>Packer Dummy Content Sizes</h3>
-        <p>
-          Dummy content for packer regions works the same way it does for columnizers, with one important difference: each asset must have a size, making the syntax:<br><code>[asset type]-[# of items]-[asset size]</code>
-        </p>
-        <p>
-          The available asset size values are <code>s, m, l</code>.
-        </p>
-      </div>
+      // <div class="span12">
+      //   <h3>Packer Dummy Content Sizes</h3>
+      //   <p>
+      //     Dummy content for packer regions works the same way it does for columnizers, with one important difference: each asset must have a size, making the syntax:<br><code>[asset type]-[# of items]-[asset size]</code>
+      //   </p>
+      //   <p>
+      //     The available asset size values are <code>s, m, l</code>.
+      //   </p>
+      // </div>
     </div>
     <div class="row-fluid">
       <div class="span12">
@@ -2363,13 +2355,19 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
           At any time, you see how your theme looks by running Populr's local theming environment on your machine. The local theming environment is a simple HTTP server that runs from your theme's directory. Once you start the environment, you can use a browser to see how your theme looks on a pop containing dummy content (as covered in the previous section).
         </p>
         <p>
-          The Populr team uses Python to run the local theming environment, since Python has a simple HTTP server built right in. The local theming environment should also work with other methods of running an HTTP server locally.
+          The Populr team uses Python to run the local theming environment, since Python has a simple HTTP server built right in. The local theming environment should also work with other methods of running an HTTP server locally For PC, we recommend installing <a href="https://github.com/nodeapps/http-server">http-server</a>.
         </p>
         <p>
           To start the local theming environment on your Mac using Python, open Terminal, then use the <code>cd</code> command to change to your theme's directory. Once you're in the right directory, use this command to start your server:
         </p>
         <pre class="prettyprint linenums language-html">```
 python -m SimpleHTTPServer 8080```</pre>
+        <p>
+        <p>
+          To start the local theming environment on your PC using http-server, open Terminal, then use the <code>cd</code> command to change to your theme's directory. Once you're in the right directory, use this command to start your server:
+        </p>
+        <pre class="prettyprint linenums language-html">```
+http-server```</pre>
         <p>
           You can then check out your theme by opening a browser and entering the URL <code>http://localhost:8080</code>. You will see a pop that uses your theme, constructed from the dummy content you specified in your theme's region definition(s).
         </p>
@@ -2399,7 +2397,7 @@ python -m SimpleHTTPServer 8080```</pre>
         </p>
         <h3>Review the requirements</h3>
           <p>
-            We set certain design and feature requirements for all Populr themes. It's best to review these before you begin designing; that way you'll have them in mind while you plan out your theme.
+            We set certain design and feature requirements for all Populr themes. It's best to review these before you begin designing, that way you'll have them in mind while you plan out your theme.
           </p>
           <p>
             <a href="http://tips.populr.me/theme-design-tips" target="_blank">Populr theme design requirements</a>
@@ -2414,7 +2412,7 @@ python -m SimpleHTTPServer 8080```</pre>
           </p>
         <h3>Sketch your asset styles</h3>
           <p>
-            With your theme's purpose in mind, sketch out how your assets will look in each region. While some people jump straight into building, those people often run into design issues that they hadn't initially considered. Planning your design first will keep your CSS cleaner &amp; shorter. Download this <a href="https://www.dropbox.com/s/qm7fd7yzc6g7wco/kincannon.psd">design spec PSD for our Kincannon theme</a> (or the <a href="https://www.dropbox.com/s/1hf8nbr0d3tixs9/kincannon.png">PNG version</a>) to see an example of how to use mockups to plan your theme design. Basically, you want to plan the styling for all combinations of asset type and size.
+            With your theme's purpose in mind, sketch out how your assets will look in each region. While some people jump straight into building, those people often run into design issues that they hadn't initially considered. Planning your design first will keep your CSS cleaner &amp; shorter. Basically, you want to plan the styling for all combinations of asset type and size.
           </p>
           <p>
             <b>Remember that you'll have to define and style all asset types for every size that you allow in each region.</b>
@@ -2427,10 +2425,6 @@ python -m SimpleHTTPServer 8080```</pre>
         <p>
           With your design in mind, you're ready to start coding. Follow these tips for a smooth build.
         </p>
-        <h3>Check the issue log first</h3>
-          <p>
-            Before you build, check our <a href="http://tips.populr.me/theme-issues" target="_blank">theme issue log</a>. There are a handful of issues that all themers should know about.
-          </p>
         <h3>Start with our base theme</h3>
           <p>
             Start your theme from our base theme (<a href="https://github.com/populr-themes/columnizer_base">GitHub repo</a> or <a href="https://github.com/populr-themes/columnizer_base/archive/master.zip" target="_blank">ZIP file</a>). It's a clean, basic columnizer region with just enough code written to run as stand-alone theme.
