@@ -22,7 +22,6 @@ draft: false
         <li><a href="#regions">Regions Overview</a></li>
         <li class="divider"></li>
         <li><a href="#columnizer-regions">Columnizer Layout Engine</a></li>
-        <!-- <li><a href="#packer-regions">Packer Layout Engine</a></li> -->
       </ul>
     </li>
     <li class="dropdown">
@@ -75,6 +74,7 @@ draft: false
         <li><a href="#less-mixins">LESS Mixin Libraries</a></li>
         <li><a href="#theme-styles">Theme Styles</a></li>
         <li><a href="#system-classes">System-Generated Classes</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
       </ul>
     </li>
     <li><a href="#mobilization">Mobilization</a></li>
@@ -467,115 +467,6 @@ draft: false
       </div>
     </div>
   </section>
-  <!-- <section id="packer-regions">
-    <div class="row-fluid">
-      <div class="span6">
-        <h2>Packer Layout Engine</h2>
-        <div class="alert alert-info">
-          <p>
-            <span class="label label-info">Heads up!</span> Packer is a legacy layout engine with an uncertain future. We strongly recommend using the Columnizer layout engine unless you have a very good reason not to.
-          </p>
-        </div>
-        <p>
-          The Packer engine stacks assets vertically based on the column a user 
-          places them in. Users have manual control over the width of each asset, and the engine packs each asset 
-          as close to the top of the page as possible.
-        </p>
-        <h3>Helper</h3>
-          <pre class="prettyprint linenums language-html">```
-{{#region "packer" id="main-region" max_auto_assets="0" columns="3" column_width="120" gutter_width="10" sizes="s,m,l" default_size="s"}}
-{{/region}}```</pre>
-        <h3>Engine-Specific Settings</h3>
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Usage</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>columns</code></td>
-              <td>
-                <p>The number of columns in the region</p>
-                <p><strong>Example:</strong> <code>columns="2"</code></p>
-              </td>
-            </tr>
-            <tr>
-              <td><code>column_width</code></td>
-              <td>
-                <p>The width of the smallest asset size in pixels</p>
-                <p><strong>Example:</strong> <code>column_width="300"</code></p>
-              </td>
-            </tr>
-            <tr>
-              <td><code>gutter_width</code></td>
-              <td>
-                <p>The amount of space between assets in pixels</p>
-                <p><strong>Example:</strong> <code>gutter_width="20"</code></p>
-              </td>
-            </tr>
-            <tr>
-              <td><code>sizes</code></td>
-              <td>
-                <p>
-                  The asset sizes available. Must be a <em>comma-delimited</em> 
-                  list and can contain one or more of the following sizes:
-                </p>
-                <ul>
-                  <li><code>s</code> (small)</li>
-                  <li><code>m</code> (medium)</li>
-                  <li><code>l</code> (large)</li>
-                </ul>
-                <p><strong>Example:</strong> <code>sizes="s,m,l"</code></p>
-              </td>
-            </tr>
-            <tr>
-              <td><code>default_size</code></td>
-              <td>
-                <p>
-                  The default size at which an asset will appear when dragged into the region. We recommend you set this to the smallest possible size.
-                </p>
-                <p><strong>Example:</strong> <code>default_size="s"</code></p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <h3>Asset Sizing</h3>
-        <p>
-          Within Packer regions, users can choose the size for each asset. So if a user sets an asset to, for example, the smallest size possible, that asset's size 
-          is <code>s</code> and it's assigned the class <code>asset-size-s</code>.
-        </p>
-        <p>
-          The valid sizes are specified in the <code>sizes</code> setting on the <code>{{#region}}</code> block helper. You can make up to three sizes available: <code>s, m, and l</code>.
-        </p>
-      </div>
-      <div class="span6">
-        <div class="anatomy-preview">
-          <div class="well">
-            <div class="region packer-region" style="text-align: center;">
-              <h4 class="region-title" style="text-align: left"><strong>Packer Region</strong></h4>
-              <div class="asset asset-size-s" style="padding: 134px 4px; margin-top: 28px;">Asset<br><span class="muted"><i>size S</i></span></div>
-              <div class="asset asset-size-s" style="margin-top: 28px;">Asset<br><span class="muted"><i>size S</i></span></div>
-              <div class="asset asset-size-s" style="margin-top: 28px;">Asset<br><span class="muted"><i>size S</i></span></div>
-              <div class="asset asset-size-s">Asset<br><span class="muted"><i>size S</i></span></div>
-              <div class="asset asset-size-s">Asset<br><span class="muted"><i>size S</i></span></div>
-              <div class="asset asset-size-m">Asset<br><span class="muted"><i>size M</i></span></div>
-              <div class="asset asset-size-l">Asset<br><span class="muted"><i>size L</i></span></div>
-            </div>
-          </div>
-          <script>
-            $(document).ready(function(){
-              $('#regions .anatomy-preview .packer-region').masonry({
-                itemSelector: '.asset',
-                columnWidth: 140
-              });  
-            });
-          </script>
-        </div>
-      </div>
-    </div>
-  </section> -->
 </section>
 <section id="assets">
   <div class="page-header">
@@ -647,9 +538,6 @@ draft: false
               <p>
                 For a Columnizer region, the available asset sizes are <code>1, 2, 3...</code> and so on.<br><strong>Columnizer example:</strong> <code>size="2"</code>
               </p>
-              <!-- <p>
-                For a Packer region, the available asset sizes are <code>s, m, l</code>. The asset sizes valid for the region are specified in the <code></code> helper.<br><strong>Packer example:</strong> <code>size="m"</code>
-              </p> -->
             </td>
           </tr>
         </tbody>
@@ -2177,6 +2065,25 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
         </p>
 
   </section>
+
+  <section id="javascript">
+    <div class="page-header">
+      <h2>JavaScript</h2>
+      <p>
+        Populr's base theme includes a main.js file in js directory for easy inclusion of specific code. Please note that $(document).on('pop-initialized', function(){}); is equivalent to $(document).ready() in Populr's theme engine. All JavaScript code should be located here or in a subsequent file in the js directory. Inline scripts should not be added to the head tag of the index.html file. 
+      </p>
+      <p>
+        For the best cross-browser experience, we highly recommend avoiding JavaScript solutions for CSS or appearance based manipulation. Please see the section <a href="#system-classes" target="_blank">System-Generated Classes</a> for more inforation on available selectors.
+      </p>
+    </div>
+
+    <div class="">
+      <p>
+        <span class="label label-info">Quick Tip!</span> Checkout the <a href="https://github.com/populr-themes" target="_blank">public theme repository</a> for Populr. You can see some working examples of current themes and the CSS & Javascript behind them.
+      </p>
+    </div>
+  </section>
+
 </section>
 
 <section id="mobilization">
@@ -2281,17 +2188,6 @@ background: @header-color url("@{base-url}/images/header-overlay.png") repeat bo
           </div>
         </div>
       </div>
-    </div>
-    <div class="row-fluid">
-      // <div class="span12">
-      //   <h3>Packer Dummy Content Sizes</h3>
-      //   <p>
-      //     Dummy content for packer regions works the same way it does for columnizers, with one important difference: each asset must have a size, making the syntax:<br><code>[asset type]-[# of items]-[asset size]</code>
-      //   </p>
-      //   <p>
-      //     The available asset size values are <code>s, m, l</code>.
-      //   </p>
-      // </div>
     </div>
     <div class="row-fluid">
       <div class="span12">
@@ -2483,7 +2379,7 @@ http-server```</pre>
         Congratulations! You made it to the end of the Populr documentation page. What a thorough and industrious developer you must be :).
       </p>
       <p>
-        If you still have questions about this stuff, get in touch with us: send an email to Morley at <code>morley[at]populr.me</code> and she'll get you sorted right out.
+        If you still have questions about this stuff, get in touch with us: send an email to Jared at <code>jared[at]populr.me</code> and he will get you sorted right out.
       </p>
       
       <p>Pop pop!</p>
